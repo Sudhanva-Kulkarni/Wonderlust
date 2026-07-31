@@ -1,5 +1,5 @@
 const Listing = require("../models/listing");
-const { geocodeLocation } = require("../utils/geocode");
+const { geocodeLocation } = require("../utils/geoCode");
 
 module.exports.index = async (req,res)=>{
     let result = await Listing.find({});
