@@ -74,10 +74,9 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// //root route
-// app.get("/", (req,res)=>{
-//     res.send("root working");
-// })
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success");
