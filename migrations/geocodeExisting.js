@@ -3,7 +3,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const mongoose = require("mongoose");
 const Listing = require("../models/listing");
-const { geocodeLocation } = require("../utils/geocode");
+const { geocodeLocation } = require("../utils/geoCode");
 
 const MONGO_URL = process.env.ATLAS_URL; // adjust if you use a different DB name/URL
 
