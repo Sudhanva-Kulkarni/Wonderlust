@@ -1,8 +1,11 @@
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+
 const mongoose = require("mongoose");
 const Listing = require("../models/listing");
 const { geocodeLocation } = require("../utils/geocode");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust"; // adjust if you use a different DB name/URL
+const MONGO_URL = process.env.ATLAS_URL; // adjust if you use a different DB name/URL
 
 async function main() {
     await mongoose.connect(MONGO_URL);
